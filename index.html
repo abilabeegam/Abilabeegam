@@ -213,7 +213,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								</span>
 								<div class="desc">
 									<h3>Software</h3>
-									<p>Inventing clever software that changes industries.</p>
+									<p>Inventing clever software that changes industries, making it easy for everyone</p>
 								</div>
 							</div>
 						</div>
@@ -224,7 +224,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								</span>
 								<div class="desc">
 									<h3>Application</h3>
-									<p>Creating smart applications that make tasks easier</p>
+									<p>Creating smart applications that make tasks easier, enhancing user experiences</p>
 								</div>
 							</div>
 						</div>
@@ -235,7 +235,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								</span>
 								<div class="desc">
 									<h3>Graphic Design</h3>
-									<p>Creating visuals, boosting brands with creativity.</p>
+									<p>Creating visuals, boosting brands with creativity and effective messaging.</p>
 								</div>
 							</div>
 						</div>
@@ -609,16 +609,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
 									<form id="submit-form" action="">
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
+											<input type="text" id="name" name="name" class="form-control" placeholder="Name" required oninput="validateInput()">
 										</div>
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
+											<input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
+											<div class="invalid-feedback"></div>
 										</div>
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
+											<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
 										</div>
 										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+											<textarea id="message" name="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
 										</div>
 										<div class="form-group">
 											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
@@ -650,31 +651,14 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
+	<!-- Form -->
+	<script src="js/form.js"></script>
 	
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
-	<script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzIRCRlOlaD8d3-BXuKgMlOKz3RhomgzglvL6LIVf02HxG4EYwDiPL-sz5_j4BFO_SOMg/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
 	</body>
 </html>
 
